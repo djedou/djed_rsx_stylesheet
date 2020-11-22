@@ -1,0 +1,31 @@
+[package]
+name = "djed_rsx_stylesheet"
+version = "0.1.0"
+authors = ["Djedou <djedouarnaud.aman@gmail.com>"]
+
+[lib]
+name = "djed_rsx_stylesheet"
+
+[features]
+#default = ["css-parse"]
+#css-parse = ["servo-css-parser"]
+
+log-unused = []
+
+[dependencies]
+djed_enum_str_derive = { git = "https://github.com/djedou/djed_enum_str_derive.git" }
+quote = "0.3.15"
+djed_rsx_shared = { git = "https://github.com/djedou/djed_rsx_shared.git", default-features = false, features = ["impl-external-yoga"] }
+djed_self_tokenize_macro = { git = "https://github.com/djedou/djed_self_tokenize.git"}
+djed_self_tokenize_trait = { git = "https://github.com/djedou/djed_self_tokenize.git"}
+serde = "1.0.117"
+serde_derive = "1.0.117"
+smallvec = { version = "1.5.0", features = ["serde"] }#0.6.0
+djed_yoga = { git = "https://github.com/djedou/djed_yoga.git", features = ["serde_support"], version = "0.1.0" }
+
+# Optional
+#servo-css-parser = { git = "https://github.com/victorporof/servo-css-parser.git", default-features = false, optional = true }
+
+[dev-dependencies]
+serde_json = "1.0.59"
+syn = { version = "0.11.11", features = ["full"] }
